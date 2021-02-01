@@ -1,9 +1,10 @@
 import React from 'react'
 
-export default function stocks({balls}) {
+export default function stocks({curr_stock}) {
     return (
         <div>
-            {balls}
+            <label> Your </label>
+            {curr_stock.made}
         </div>
     )
 }

@@ -1,11 +1,10 @@
 import React from 'react'
 import Stocks from './Stocks'
 
-export default function Calculate({testy}) {
+export default function Calculate({calcs}) {
     return (
-        
-        testy.map(balls => {
-            return <Stocks key={balls} balls = {balls} />
+        calcs.map(curr_stock => {
+            return <Stocks key={curr_stock.id} curr_stock = {curr_stock} />
         })
     )
 }
