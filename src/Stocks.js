@@ -13,7 +13,7 @@ export default function stocks({curr_stock}) {
             <label> shares has increased by $</label>
             {(curr_stock.expected - curr_stock.price)}
             <label>, giving a $</label>
-            {(curr_stock.amount / curr_stock.price) * (curr_stock.expected - curr_stock.price)}
+            {format((curr_stock.amount / curr_stock.price) * (curr_stock.expected - curr_stock.price))}
             <label> gain, a </label>
             {100 * (curr_stock.expected - curr_stock.price) / curr_stock.price}
             <label>% increase</label><br /><br />

@@ -29,14 +29,20 @@ function App() {
     const curr_expected = curr_expected_ref.current.value
     
     //if (curr_price === '') return 
+    setCalc([])
 
     setCalc(prevCalc => {
       return [... prevCalc, {id: uuidv4(), amount: curr_amount, price: curr_price, expected: curr_expected}]
     })
-    
-    
-
     //curr_amount_ref.current.value = null
+  }
+
+  function handleReset(e) {
+    curr_amount_ref.current.value = null
+    curr_price_ref.current.value = null
+    curr_expected_ref.current.value = null
+
+    setCalc([])
   }
  
   return (
@@ -54,6 +60,7 @@ function App() {
       <input ref = {curr_expected_ref} type="text" /> <br />
 
       <button onClick={handleCalculate}> Calculate </button>
+      <button onClick={handleReset}> Reset </button>
 
       {<Calculate calcs = {indiv_stock}/>}
     </>
